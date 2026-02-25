@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍃 Smart Room Environment Monitor
 
-## Getting Started
+ระบบตรวจสอบสภาพแวดล้อมภายในห้องอัจฉริยะ (IoT) ที่สามารถวัดค่าอุณหภูมิ ความชื้น และปริมาณฝุ่นละอองแบบ Real-time พร้อมแสดงผลผ่าน Web Dashboard และระบบแจ้งเตือนสถานะอากาศผ่าน LED Bar
 
-First, run the development server:
+## 📌 ฟีเจอร์หลัก (Features)
+- 🌡️ วัดอุณหภูมิและความชื้นแบบ Real-time
+- 💨 วัดปริมาณฝุ่นละออง (Dust/PM) พร้อมคำนวณระดับคุณภาพอากาศ
+- 🚥 แสดงสถานะคุณภาพอากาศผ่านโมดูล LED 8 ระดับ (AQI Bar)
+- 🚨 แจ้งเตือนอันตรายด้วยไฟ LED และแจ้งเตือนผ่านหน้า Web Dashboard
+- 📊 แสดงกราฟสถิติย้อนหลัง (Real-time Graph) บนหน้าเว็บที่พัฒนาด้วย Next.js
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ อุปกรณ์ฮาร์ดแวร์ (Hardware Components)
+1. บอร์ดไมโครคอนโทรลเลอร์ ESP32
+2. เซ็นเซอร์วัดอุณหภูมิและความชื้น DHT22
+3. เซ็นเซอร์วัดฝุ่นละออง Sharp GP2Y1010AU0F
+4. โมดูล LED 8 ดวง (LED Bar Module)
+5. หลอดไฟ LED สำหรับแจ้งเตือนอันตราย (Active-Low)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💻 การติดตั้งและการใช้งาน (How to run)
+### 1. ฝั่งฮาร์ดแวร์ (ESP32)
+- เปิดไฟล์ `esp32_smart_room.ino` ด้วย Arduino IDE
+- แก้ไขชื่อ Wi-Fi (`ssid`) และ รหัสผ่าน (`password`) 
+- ใส่ค่า `API_KEY` และ `DATABASE_URL` ของ Firebase
+- อัปโหลดโค้ดลงบอร์ด ESP32
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. ฝั่งเว็บแอปพลิเคชัน (Next.js Dashboard)
+- เข้าไปที่โฟลเดอร์โปรเจกต์เว็บ และเปิด Terminal
+- ติดตั้งไลบรารีด้วยคำสั่ง `npm install`
+- รันเซิร์ฟเวอร์ด้วยคำสั่ง `npm run dev`
+- เปิดเบราว์เซอร์และเข้าไปที่ `http://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔗 ลิงก์ที่เกี่ยวข้อง
+- **Simulator:** [ใส่ลิงก์ Wokwi ของคุณที่นี่]
