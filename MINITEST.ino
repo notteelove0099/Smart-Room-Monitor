@@ -5,14 +5,14 @@
 // =========================================
 // 1. กำหนดข้อมูล Wi-Fi
 // =========================================
-const char* ssid = "POCOF6";
-const char* password = "notteelove0099";
+const char* ssid = "....";
+const char* password = "....";
 
 // =========================================
 // 2. ข้อมูล Firebase
 // =========================================
-#define API_KEY "AIzaSyAzjzRdjIuOnb0U0uOFuxvyptNpu_x3usc"
-#define DATABASE_URL "test-mode-f8aca-default-rtdb.asia-southeast1.firebasedatabase.app"
+#define API_KEY "......"
+#define DATABASE_URL "........."
 
 // =========================================
 // 3. กำหนดขาอุปกรณ์ต่างๆ
